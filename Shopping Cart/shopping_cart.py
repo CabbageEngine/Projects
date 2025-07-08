@@ -19,32 +19,32 @@ cart = []
 
 # Adds new items to the cart
 def addItem():
-    item = input("Choose an item or (M)enu: ").lower()
-    if item == item in cart:
-        print(f"You already have {item} in your cart.\n")
-        addItem()
-    else:
+    while True:
+        item = input("Choose an item or (M)enu: ").lower()
         if item in ('m', 'menu', 'quit', 'q'):
             print("Returning to main menu.\n")
-            return
+            break
+        elif item in cart:
+            print(f"You already have {item} in your cart.\n")
         elif item != cart and item in products:
             cart.append(item)
-            print(f"{item} has been added to your cart.\n")
-            addItem()
-        elif item != cart and item != products:
+            print(f"{item.title()} has been added to your cart.\n")
+            displayCart()
+        elif item not in products:
             print("\nSorry, that item is not available.\n")
-            print("\nWe have the following products available: ")
-            print(", ".join(products), "\n")
-            addItem()
+            print("Available products: " + ", ".join(products), "\n")
+        elif item in cart:
+            print(f"You already have {item} in your cart.\n")
 
 # Removes items from the cart
 def removeItem():
     item = input("Choose an item to remove: ").lower()
-    print(f"{item} has been removed from your cart.\n")
     if item in cart:
         cart.remove(item)
+        print(f"{item.title()} have been removed from your cart.\n")
+        displayCart()
     else:
-        print(f"Could not locate {item} in your cart.\n")
+        print(f"{item} was not found in your cart.\n")
 
 # Displays current items in the cart       
 def displayCart():
@@ -52,7 +52,7 @@ def displayCart():
         print("There's nothing in the cart.\n")
     else:
         for item in cart:
-            print(f"{item} is in your cart.")
+            print(f"{item.title()} is in your cart.")
         print("\n")
 
 # Intro text imported from display_functions.py
