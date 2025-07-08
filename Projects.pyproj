@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>78b48c4c-4fe5-4c12-aa3b-01768adea5ee</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Shopping Cart\shopping_cart.py</StartupFile>
+    <StartupFile>Temperature Converter\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,8 +23,11 @@
   <ItemGroup>
     <Compile Include="Shopping Cart\display_functions.py" />
     <Compile Include="Shopping Cart\shopping_cart.py" />
+    <Compile Include="Temperature Converter\main.py" />
+    <Compile Include="Temperature Converter\temp_converter.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Temperature Converter\" />
     <Folder Include="Shopping Cart\" />
     <Folder Include="Shopping Cart\__pycache__\" />
   </ItemGroup>
