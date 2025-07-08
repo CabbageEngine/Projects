@@ -11,10 +11,13 @@ Function Names:
     quit - quit condition to exit program
 '''
 
-
+# List to store products
 products = ['apples', 'oranges', 'chicken', 'bread', 'jam', 'cheese', 'juice']
+
+# Start with empty cart
 cart = []
 
+# Adds new items to the cart
 def addItem():
     item = input("Choose an item or (M)enu: ").lower()
     if item == item in cart:
@@ -34,6 +37,7 @@ def addItem():
             print(", ".join(products), "\n")
             addItem()
 
+# Removes items from the cart
 def removeItem():
     item = input("Choose an item to remove: ").lower()
     print(f"{item} has been removed from your cart.\n")
@@ -42,6 +46,7 @@ def removeItem():
     else:
         print(f"Could not locate {item} in your cart.\n")
 
+# Displays current items in the cart       
 def displayCart():
     if cart == []:
         print("There's nothing in the cart.\n")
@@ -50,8 +55,10 @@ def displayCart():
             print(f"{item} is in your cart.")
         print("\n")
 
+# Intro text imported from display_functions.py
 welcomeIntro()
 
+# Loop menu that accounts for non-specified entries
 while True:
     print("Sals Grocers Menu")
     displayMenu()
@@ -69,3 +76,5 @@ while True:
         removeItem()
     elif makeSelection in ('d', 'display', 'cart'):
         displayCart()
+    else:
+        print("That is not a valid entry.\n")
