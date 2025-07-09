@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>78b48c4c-4fe5-4c12-aa3b-01768adea5ee</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Temperature Converter\main.py</StartupFile>
+    <StartupFile>Favorite Foods Dictionary\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,12 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Favorite Foods Dictionary\main.py" />
     <Compile Include="Shopping Cart\display_functions.py" />
     <Compile Include="Shopping Cart\shopping_cart.py" />
     <Compile Include="Temperature Converter\main.py" />
     <Compile Include="Temperature Converter\temp_converter.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Favorite Foods Dictionary\" />
     <Folder Include="Temperature Converter\" />
     <Folder Include="Shopping Cart\" />
     <Folder Include="Shopping Cart\__pycache__\" />
