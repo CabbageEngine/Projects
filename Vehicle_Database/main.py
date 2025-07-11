@@ -158,34 +158,6 @@ def modify_vehicle_profile():
         json.dump(vehicles, file, indent=4)
     print("Vehicle profile updated.\n")
 
-    '''
-    for vehicle in vehicles:
-        if vehicle.get('plate') == lookup_plate:
-            print("\nVehicle found: ")
-            for key, value in vehicle.items():
-                print(f"{key.title()}: {value}")
-
-            print("\nWhich field would you like to update? " +
-                  "(or type 'q' to quit)")
-            while True:
-                field = input("Field name: ").strip().lower()
-                if field == 'q':
-                    break
-                if field not in vehicle:
-                    print("That field does not exist. Try again.")
-                    continue
-                new_value = input(f"Enter new value for {field}: ").strip()
-                vehicle[field] = new_value
-                print(f"{field.title()} updated to {new_value}.\n")
-
-            with open(DATA_FILE, "w", encoding='utf-8') as file:
-                json.dump(vehicles, file, indent=4)
-            print("Vehicle profile updated.\n")
-            return
-
-    print("Vehicle with that plate number not found.\n")
-    '''
-
 # Delete all vehicle profiles on record
 def clear_profiles(filename=DATA_FILE):
     if filename.exists():
