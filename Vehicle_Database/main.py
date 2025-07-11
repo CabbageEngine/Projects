@@ -109,9 +109,56 @@ def modify_vehicle_profile():
         print("No vehicle profiles available.\n")
         return
 
-    lookup_plate = input("Enter license plate number to lookup vehicle profile: ")
+    lookup_plate = input("Enter full / partial license plate number to lookup "+ 
+                         "vehicle profile: ")
     lookup_plate = lookup_plate.replace("-","").upper()
 
+    # Find all vehicles with plate containing the lookup substring
+    matched_vehicles = [v for v in vehicles if lookup_plate in v.get('plate', '')]
+
+    if not matched_vehicles:
+        print("No matching vehicles found.\n")
+        return
+
+    print(f"\n{len(matched_vehicles)} match(es) found:")
+    for i, vehicle in enumerate(matched_vehicles, start=1):
+        print(f"\nMatch {i}:")
+        for key, value in vehicle.items():
+            print(f" {key.title()}: {value}")
+
+    # Choose which vehicle to modify
+    if len(matched_vehicles) > 1:
+        try:
+            index = int(input(f"\nEnter the match number "
+                              f"(1-{len(matched_vehicles)}) to modify: "))-1
+            if not (0 <= index < len(matched_vehicles)):
+                print("Invalid selection. Aborting.")
+                return
+        except ValueError:
+            print("Invalid input. Aborting.")
+            return
+        vehicle_to_edit = matched_vehicles[index]
+    else:
+        vehicle_to_edit = matched_vehicles[0]
+
+    print("\nWhich field would you like to update? (or type 'q' to quit)")
+    while True:
+        field = input("Field name: ").strip().lower()
+        if field == 'q':
+            break
+        if field not in vehicle_to_edit:
+            print("That field does not exist. Try again.")
+            continue
+        new_value = input(f"Enter new value for {field}: ").strip()
+        vehicle_to_edit[field] = new_value
+        print(f"{field.title()} updated to {new_value}.\n")
+
+    # Save changes
+    with open(DATA_FILE, "w", encoding='utf-8') as file:
+        json.dump(vehicles, file, indent=4)
+    print("Vehicle profile updated.\n")
+
+    '''
     for vehicle in vehicles:
         if vehicle.get('plate') == lookup_plate:
             print("\nVehicle found: ")
@@ -137,6 +184,7 @@ def modify_vehicle_profile():
             return
 
     print("Vehicle with that plate number not found.\n")
+    '''
 
 # Delete all vehicle profiles on record
 def clear_profiles(filename=DATA_FILE):
