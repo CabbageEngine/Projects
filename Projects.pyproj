@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>78b48c4c-4fe5-4c12-aa3b-01768adea5ee</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Favorite Foods Dictionary\main.py</StartupFile>
+    <StartupFile>Vehicle_Database\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,22 +21,33 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Favorite Foods Dictionary\main.py" />
-    <Compile Include="Shopping Cart\display_functions.py" />
-    <Compile Include="Shopping Cart\shopping_cart.py" />
-    <Compile Include="Temperature Converter\main.py" />
-    <Compile Include="Temperature Converter\temp_converter.py" />
+    <Compile Include="Favorite_Foods_Dictionary\main.py" />
+    <Compile Include="Shopping_Cart\display_functions.py" />
+    <Compile Include="Shopping_Cart\shopping_cart.py" />
+    <Compile Include="Simple_Contact_Book\main.py" />
+    <Compile Include="Temperature_Converter\main.py" />
+    <Compile Include="Temperature_Converter\temp_converter.py" />
+    <Compile Include="Vehicle_Database\main_old2.py" />
+    <Compile Include="Vehicle_Database\main_old1.py" />
+    <Compile Include="Vehicle_Database\local_main.py" />
+    <Compile Include="Vehicle_Database\functions.py" />
+    <Compile Include="Vehicle_Database\main.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Favorite Foods Dictionary\" />
-    <Folder Include="Temperature Converter\" />
-    <Folder Include="Shopping Cart\" />
-    <Folder Include="Shopping Cart\__pycache__\" />
+    <Folder Include="Favorite_Foods_Dictionary\" />
+    <Folder Include="Vehicle_Database\" />
+    <Folder Include="Simple_Contact_Book\" />
+    <Folder Include="Temperature_Converter\" />
+    <Folder Include="Shopping_Cart\" />
+    <Folder Include="Shopping_Cart\__pycache__\" />
+    <Folder Include="Vehicle_Database\vehicle_data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shopping Cart\__pycache__\display_functions.cpython-313.pyc" />
-    <Content Include="Shopping Cart\__pycache__\display_menu.cpython-313.pyc" />
-    <Content Include="Shopping Cart\__pycache__\shopping_cart.cpython-313.pyc" />
+    <Content Include="Shopping_Cart\__pycache__\display_functions.cpython-313.pyc" />
+    <Content Include="Shopping_Cart\__pycache__\display_menu.cpython-313.pyc" />
+    <Content Include="Shopping_Cart\__pycache__\shopping_cart.cpython-313.pyc" />
+    <Content Include="Simple_Contact_Book\contacts.json" />
+    <Content Include="Vehicle_Database\vehicle_data\vehicle_profiles.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
